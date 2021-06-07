@@ -2,6 +2,7 @@
 require_once './models/Product.php';
 require_once './models/Category.php';
 
+const  BASE_URL = 'http://loaclhost/php/mvc';
 
 class ProductController{
     public function index()
@@ -15,16 +16,25 @@ class ProductController{
         $cates = Category::all();
         include_once './views/admin/product/add.php';
     }
-
+    // mic oong tat a
     public function saveAdd()
-    {
+    {   
         $name = $_POST['name'];
         $cate_id = $_POST['cate_id'];
         $color = $_POST['color'];
         $price = $_POST['price'];
+        //validate
+        $errors = "";
+        if($name == "" ){
+            $errors .= "&name-err=Tên sp không được để trống";
+        }
+
+        if(strlen($errors) > 0){
+            header('location: http://localhost/php/mvc/index.php?r=admin/add-product');
+            die;
+        }        
 
         $model = new Product();
-
         $model->name = $name;
         $model->cate_id = $cate_id;
         $model->color = $color;
@@ -87,7 +97,10 @@ class ProductController{
 
     public function search()
     {
-        var_dump("OK");die;
+        $keyword = $_POST['keyword'];
+        $productFilter = Product::where(['name','like',"%$keyword%"])->get();
+        // var_dump($product);die;
+        include_once './views/admin/product/index.php';
     }
 }
 

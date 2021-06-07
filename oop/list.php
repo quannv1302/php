@@ -2,9 +2,11 @@
 require_once 'models/Category.php';
 require_once 'models/Product.php';
 
-// $list = Product::where(['cate_id','>','1'])
+// $list = Product::where(['name','like','%555%'])
 //                 ->andWhere(['id', '3'])
 //                 ->get();
+// echo "<pre>";
+// var_dump($list);die;
 $listProduct = Product::all();
 ?>
 

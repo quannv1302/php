@@ -21,6 +21,9 @@
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="name" placeholder="">
                     </div>
+                    <?php if(isset($_GET['name-err'])): ?>
+                        <span class="text-danger"><?= $_GET['name-err'] ?></span>
+                    <?php endif ?>
                 </div>
                 <br>
                 <div class="form-group row">

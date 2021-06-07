@@ -86,6 +86,12 @@ class BaseModel
         return $rs;
     }
 
+    public static function paging()
+    {
+        $model = new static;
+        $sql = "select * from $model->tableName limit 5";
+    }
+
     public static function find($id)
     {   
         $model = new static();
@@ -130,6 +136,7 @@ class BaseModel
         $rs = $stmt->fetchAll(PDO::FETCH_CLASS, get_class($this));
         return $rs;
     }
+
     
 }
 
