@@ -19,7 +19,7 @@
                 <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary" type="submit">Search</button>
                 </div>
-                <input type="text" class="form-control" name="keyword">
+                <input type="text" class="form-control" name="keyword" value="<?=$_POST['keyword'];?>">
             </div>
         </form>
         <br>
@@ -54,8 +54,8 @@
                         </td>
                         <td><?= $pF->price; ?></td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="index.php?r=admin/update-product&id=<?= $product->id; ?>">Update</a>
-                            <a class="btn btn-sm btn-danger" href="index.php?r=admin/remove-product&id=<?= $product->id; ?>">Delete</a>
+                            <a class="btn btn-sm btn-primary" href="index.php?r=admin/update-product&id=<?= $pF->id; ?>">Update</a>
+                            <a class="btn btn-sm btn-danger" href="index.php?r=admin/remove-product&id=<?= $pF->id; ?>">Delete</a>
                         </td>
                     </tr>
                 <?php endforeach ?>
