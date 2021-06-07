@@ -34,6 +34,10 @@ switch ($url) {
         $ctl = new ProductController();
         $ctl->remove();
         break;
+     case 'admin/search-product':
+        $ctl = new ProductController();
+        $ctl->search();
+        break;
     
     default:
         echo "<h1>Not found!</h1>";

@@ -84,6 +84,11 @@ class ProductController{
 
         header('location: index.php?r=product');
     }
+
+    public function search()
+    {
+        var_dump("OK");die;
+    }
 }
 
 
