@@ -37,7 +37,11 @@
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Color :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="color" placeholder="">
+                        <select class="form-select" name="color">
+                            <option value="1">Black</option>
+                            <option value="2">White</option>
+                            <option value="3">Gold</option>
+                        </select>
                     </div>
                 </div>
                 <br>

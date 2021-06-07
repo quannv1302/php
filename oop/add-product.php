@@ -18,7 +18,13 @@ $cates = Category::all();
         </select>
     </div>
     <div>
-        Color: <input type="text" name="color">
+        Color: 
+        <select name="color">
+            <option value="Red">Red</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+        </select>
     </div>
     <div>
         Price: <input type="text" name="price">

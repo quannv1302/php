@@ -31,7 +31,11 @@
                     <div class="col-sm-10">
                         <select class="form-select" aria-label="Default select example" name="cate_id">
                             <?php foreach ($cates as $cate) : ?>
-                                <option value="<?= $cate->id; ?>"><?= $cate->name; ?></option>
+                                <option
+                                    <?php if($cate->id == $product->cate_id):?>
+                                        selected
+                                    <?php endif ?>
+                                    value="<?= $cate->id; ?>"><?= $cate->name; ?></option>
                             <?php endforeach ?>
                         </select>
                     </div>
@@ -40,9 +44,23 @@
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Color :</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="color" placeholder=""
-                        value="<?php echo $product->color ?>"
-                        >
+                        <select class="form-select" name="color">
+                            <option value="1" 
+                                    <?php if($product->color == 1):?>
+                                        selected
+                                    <?php endif ?>
+                            >Black</option>
+                            <option value="2" 
+                                    <?php if($product->color == 2):?>
+                                        selected
+                                    <?php endif ?>
+                            >White</option>
+                            <option value="3" 
+                                    <?php if($product->color == 3):?>
+                                        selected
+                                    <?php endif ?>
+                            >Gold</option>
+                        </select>
                     </div>
                 </div>
                 <br>

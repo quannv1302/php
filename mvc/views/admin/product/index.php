@@ -42,7 +42,15 @@
                         <td><?= $product->id; ?></td>
                         <td><?= $product->name; ?></td>
                         <td><?= $product->getCateName(); ?></td>
-                        <td><?= $product->color; ?></td>
+                        <td>
+                            <?php if($product->color == 1) { ?>
+                                Black
+                            <?php }else if($product->color == 2) { ?>
+                                White
+                            <?php }else if($product->color == 3) { ?>
+                                Gold
+                            <?php } ?>
+                        </td>
                         <td><?= $product->price; ?></td>
                         <td>
                             <a class="btn btn-sm btn-primary" href="index.php?r=admin/update-product&id=<?= $product->id; ?>">Update</a>
